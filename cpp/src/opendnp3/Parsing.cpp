@@ -23,11 +23,11 @@
 #include <opendnp3/Parsing.h>
 
 #include <sstream>
-#include <boost/numeric/conversion/converter.hpp>
 
 namespace opendnp3
 {
 
+	/*
 bool Parsing::Get(const std::string& aArg, bool& arValue)
 {
 	if(aArg == "true") {
@@ -57,6 +57,7 @@ bool Parsing::Get(const std::string& aArg, uint8_t& arValue)
 	}
 	else return false;
 }
+*/
 
 }
 

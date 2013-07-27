@@ -37,6 +37,7 @@
 namespace opendnp3
 {
 
+	/*
 class Parsing
 {
 public:
@@ -58,6 +59,8 @@ public:
 		return Get(aArg, arValue) && arValue >= 0;
 	}
 };
+*/
+
 }
 
 #endif

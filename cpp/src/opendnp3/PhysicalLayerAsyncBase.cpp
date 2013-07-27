@@ -209,7 +209,7 @@ void PhysicalLayerAsyncBase::AsyncRead(uint8_t* apBuff, size_t aMaxBytes)
 // Internal events
 ///////////////////////////////////////
 
-void PhysicalLayerAsyncBase::OnOpenCallback(const boost::system::error_code& arErr)
+void PhysicalLayerAsyncBase::OnOpenCallback(const std::error_code& arErr)
 {
 	if(mState.mOpening) {
 		mState.mOpening = false;
@@ -240,7 +240,7 @@ void PhysicalLayerAsyncBase::OnOpenCallback(const boost::system::error_code& arE
 	}
 }
 
-void PhysicalLayerAsyncBase::OnReadCallback(const boost::system::error_code& arErr, uint8_t* apBuff, size_t aSize)
+void PhysicalLayerAsyncBase::OnReadCallback(const std::error_code& arErr, uint8_t* apBuff, size_t aSize)
 {
 	if(mState.mReading) {
 		mState.mReading = false;
@@ -265,7 +265,7 @@ void PhysicalLayerAsyncBase::OnReadCallback(const boost::system::error_code& arE
 	}
 }
 
-void PhysicalLayerAsyncBase::OnWriteCallback(const boost::system::error_code& arErr, size_t aNumBytes)
+void PhysicalLayerAsyncBase::OnWriteCallback(const std::error_code& arErr, size_t aNumBytes)
 {
 	if(mState.mWriting) {
 		mState.mWriting = false;

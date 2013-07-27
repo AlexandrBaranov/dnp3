@@ -6,7 +6,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(ASIO_HOME)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ASIO_STANDALONE;ASIO_HAS_STD_ADDRESSOF;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ASIO_STANDALONE;ASIO_HAS_STD_ADDRESSOF;ASIO_HAS_STD_TYPE_TRAITS;ASIO_HAS_STD_FUNCTION;ASIO_HAS_CSTDINT;ASIO_HAS_VARIADIC_TEMPLATES;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup />
