@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -58,12 +58,10 @@
     <Import Project="..\config\boost_includes.props" />
     <Import Project="..\config\output_dirs.props" />
     <Import Project="..\config\boost_lib.props" />
-    <Import Project="..\config\common_boost_defines.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\config\boost_includes.props" />
-    <Import Project="..\config\common_boost_defines.props" />
     <Import Project="..\config\boostlib64.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -71,13 +69,11 @@
     <Import Project="..\config\boost_includes.props" />
     <Import Project="..\config\output_dirs.props" />
     <Import Project="..\config\boost_lib.props" />
-    <Import Project="..\config\common_boost_defines.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\config\boost_includes.props" />
     <Import Project="..\config\output_dirs.props" />
-    <Import Project="..\config\common_boost_defines.props" />
     <Import Project="..\config\boostlib64.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
