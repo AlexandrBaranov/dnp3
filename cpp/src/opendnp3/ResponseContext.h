@@ -32,8 +32,6 @@
 #include <queue>
 #include <functional>
 
-#include <boost/bind.hpp>
-
 #include "Loggable.h"
 #include "APDU.h"
 #include "Database.h"
@@ -315,7 +313,7 @@ void ResponseContext::RecordStaticObjectsByRange(StreamObject<typename T::MeasTy
 	last = first + aStop;
 	first = first + aStart;
 	ResponseKey key(RT_STATIC, this->mStaticWriteMap.size());
-	WriteFunction func = boost::bind(&ResponseContext::WriteStaticObjects<T>, this, apObject, first, last, key, _1);
+	WriteFunction func = std::bind(&ResponseContext::WriteStaticObjects<T>, this, apObject, first, last, key, std::placeholders::_1);
 	this->mStaticWriteMap[key] = func;
 }
 

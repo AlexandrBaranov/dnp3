@@ -27,7 +27,7 @@ namespace opendnp3
 
 OutstationStackImpl::OutstationStackImpl(
         Logger* apLogger,
-        boost::asio::io_service* apService,
+        asio::io_service* apService,
         IExecutor* apExecutor,
         ICommandHandler* apCmdHandler,
         const SlaveStackConfig& arCfg,

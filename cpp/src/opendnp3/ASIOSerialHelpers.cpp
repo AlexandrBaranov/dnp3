@@ -27,16 +27,16 @@
 #include <opendnp3/Exception.h>
 #include <opendnp3/Location.h>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
-using namespace boost::asio;
+using namespace asio;
 using namespace boost::system;
 
 namespace opendnp3
 {
 
 template<class T>
-void SetOption(boost::asio::serial_port& arPort, const T& arOption)
+void SetOption(asio::serial_port& arPort, const T& arOption)
 {
 	error_code ec;
 	arPort.set_option(arOption, ec);
@@ -101,7 +101,7 @@ serial_port_base::parity ConvertParity(ParityType aParity)
 	return serial_port_base::parity(t);
 }
 
-void Configure(SerialSettings& arSettings, boost::asio::serial_port& arPort, error_code& ec)
+void Configure(SerialSettings& arSettings, asio::serial_port& arPort, error_code& ec)
 {
 	//Set all the various options
 	arPort.set_option(ConvertBaud(arSettings.mBaud), ec); if(ec) return;
@@ -111,7 +111,7 @@ void Configure(SerialSettings& arSettings, boost::asio::serial_port& arPort, err
 	arPort.set_option(ConvertFlow(arSettings.mFlowType), ec); if(ec) return;
 }
 
-void Configure(SerialSettings& arSettings, boost::asio::serial_port& arPort)
+void Configure(SerialSettings& arSettings, asio::serial_port& arPort)
 {
 	//Set all the various options
 	SetOption(arPort, ConvertBaud(arSettings.mBaud));

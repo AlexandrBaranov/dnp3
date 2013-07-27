@@ -25,7 +25,7 @@
 namespace opendnp3
 {
 
-TimerASIO::TimerASIO(boost::asio::strand* apStrand) :
+TimerASIO::TimerASIO(asio::strand* apStrand) :
 	mCanceled(false),
 	mTimer(apStrand->get_io_service())
 {

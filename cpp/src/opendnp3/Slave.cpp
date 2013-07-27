@@ -32,7 +32,6 @@
 #include "LoggableMacros.h"
 #include "IExecutor.h"
 
-#include <boost/bind.hpp>
 #include <functional>
 
 namespace opendnp3

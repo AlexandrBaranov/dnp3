@@ -25,7 +25,7 @@
 #include <opendnp3/LinkRoute.h>
 #include <opendnp3/IPhysicalLayerAsync.h>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <sstream>
 
 
@@ -35,7 +35,7 @@ namespace opendnp3
 {
 
 TransportLoopbackTestObject::TransportLoopbackTestObject(
-        boost::asio::io_service* apService,
+        asio::io_service* apService,
         IPhysicalLayerAsync* apPhys,
         LinkConfig aCfgA,
         LinkConfig aCfgB,

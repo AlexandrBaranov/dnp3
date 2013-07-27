@@ -71,7 +71,7 @@ public:
 private:
 	EventLog mLog;
 	IOServiceThreadPool mPool;
-	boost::asio::strand mStrand;
+	asio::strand mStrand;
 
 public:
 	ASIOExecutor exe;
@@ -127,8 +127,8 @@ BOOST_AUTO_TEST_CASE(TestOrderedDispatch)
 BOOST_AUTO_TEST_CASE(ExpirationAndReuse)
 {
 	MockTimerHandler mth;
-	boost::asio::io_service srv;
-	boost::asio::strand strand(srv);
+	asio::io_service srv;
+	asio::strand strand(srv);
 	ASIOExecutor exe(&strand);
 
 	ITimer* pT1 = exe.Start(milliseconds(1), std::bind(&MockTimerHandler::OnExpiration, &mth));
@@ -143,8 +143,8 @@ BOOST_AUTO_TEST_CASE(ExpirationAndReuse)
 BOOST_AUTO_TEST_CASE(Cancelation)
 {
 	MockTimerHandler mth;
-	boost::asio::io_service srv;
-	boost::asio::strand strand(srv);
+	asio::io_service srv;
+	asio::strand strand(srv);
 	ASIOExecutor exe(&strand);
 	ITimer* pT1 = exe.Start(milliseconds(1), std::bind(&MockTimerHandler::OnExpiration, &mth));
 	pT1->Cancel();
@@ -161,8 +161,8 @@ BOOST_AUTO_TEST_CASE(MultipleOutstanding)
 {
 	MockTimerHandler mth1;
 	MockTimerHandler mth2;
-	boost::asio::io_service srv;
-	boost::asio::strand strand(srv);
+	asio::io_service srv;
+	asio::strand strand(srv);
 	ASIOExecutor ts(&strand);
 	ITimer* pT1 = ts.Start(milliseconds(0), std::bind(&MockTimerHandler::OnExpiration, &mth1));
 	ITimer* pT2 = ts.Start(milliseconds(100), std::bind(&MockTimerHandler::OnExpiration, &mth2));

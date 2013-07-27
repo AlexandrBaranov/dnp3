@@ -49,7 +49,7 @@ public:
 
 	MasterStackImpl(
 	        Logger*,
-	        boost::asio::io_service* apService,
+	        asio::io_service* apService,
 	        IExecutor* apExecutor,
 	        IDataObserver* apPublisher,
 	        AsyncTaskGroup* apTaskGroup,

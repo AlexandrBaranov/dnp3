@@ -27,7 +27,7 @@
 #include <opendnp3/Exception.h>
 #include <opendnp3/Location.h>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <functional>
 
 using namespace std;
@@ -35,7 +35,7 @@ using namespace std;
 namespace opendnp3
 {
 
-ASIOExecutor::ASIOExecutor(boost::asio::strand* apStrand) :
+ASIOExecutor::ASIOExecutor(asio::strand* apStrand) :
 	mpStrand(apStrand),
 	mNumActiveTimers(0),
 	mIsShuttingDown(false)

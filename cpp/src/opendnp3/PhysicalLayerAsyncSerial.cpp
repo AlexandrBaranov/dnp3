@@ -22,7 +22,7 @@
 
 #include "PhysicalLayerAsyncSerial.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <boost/system/error_code.hpp>
 
 #include <functional>
@@ -36,7 +36,7 @@
 #include "ASIOSerialHelpers.h"
 
 using namespace boost;
-using namespace boost::asio;
+using namespace asio;
 using namespace boost::system;
 using namespace std;
 
@@ -45,7 +45,7 @@ namespace opendnp3
 
 PhysicalLayerAsyncSerial::PhysicalLayerAsyncSerial(
         Logger* apLogger,
-        boost::asio::io_service* apIOService,
+        asio::io_service* apIOService,
         const SerialSettings& arSettings) :
 
 	PhysicalLayerAsyncASIO(apLogger, apIOService),

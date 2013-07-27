@@ -34,7 +34,7 @@
 #include <opendnp3/Location.h>
 #include <opendnp3/SerialTypes.h>
 
-#include <boost/asio/serial_port.hpp>
+#include <asio/serial_port.hpp>
 
 #include <memory>
 
@@ -46,7 +46,7 @@ namespace opendnp3
 class DLL_LOCAL PhysicalLayerAsyncSerial : public PhysicalLayerAsyncASIO
 {
 public:
-	PhysicalLayerAsyncSerial(Logger*, boost::asio::io_service* apIOService, const SerialSettings& arSettings);
+	PhysicalLayerAsyncSerial(Logger*, asio::io_service* apIOService, const SerialSettings& arSettings);
 
 	/* Implement the shared client/server actions */
 	void DoClose();
@@ -59,7 +59,7 @@ public:
 protected:
 
 	SerialSettings mSettings;
-	boost::asio::serial_port mPort;
+	asio::serial_port mPort;
 };
 }
 

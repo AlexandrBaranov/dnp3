@@ -23,14 +23,14 @@
 #include <boost/test/unit_test.hpp>
 
 #include <iostream>
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <functional>
 
 #include <opendnp3/MonotonicDeadlineTimer.h>
 
 using namespace std;
 using namespace boost;
-using namespace boost::asio;
+using namespace asio;
 using namespace boost::system;
 
 void AssertCanceled(bool* apFlag, const boost::system::error_code& ec)

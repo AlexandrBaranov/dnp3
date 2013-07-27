@@ -48,7 +48,7 @@ public:
 	        LinkConfig aClientCfg,
 	        LinkConfig aServerCfg,
 	        Logger* apLogger,
-	        boost::asio::io_service* apService,
+	        asio::io_service* apService,
 	        boost::uint16_t aPort);
 
 	void Start();

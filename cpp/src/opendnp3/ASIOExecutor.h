@@ -30,7 +30,7 @@
 
 #include <queue>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <mutex>
 #include <condition_variable>
 
@@ -44,7 +44,7 @@ class DLL_LOCAL ASIOExecutor : public IExecutor
 {
 
 public:
-	ASIOExecutor(boost::asio::strand*);
+	ASIOExecutor(asio::strand*);
 	~ASIOExecutor();
 
 	ITimer* Start(timer_clock::duration, const std::function<void ()>&);
@@ -58,7 +58,7 @@ private:
 	TimerASIO* GetTimer();
 	void StartTimer(TimerASIO*, const std::function<void ()>&);
 
-	boost::asio::strand* mpStrand;
+	asio::strand* mpStrand;
 
 	typedef std::deque<TimerASIO*> TimerQueue;
 

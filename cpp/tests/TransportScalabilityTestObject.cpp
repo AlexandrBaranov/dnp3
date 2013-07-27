@@ -23,7 +23,7 @@
 #include "TransportScalabilityTestObject.h"
 #include <sstream>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 using namespace std;
 

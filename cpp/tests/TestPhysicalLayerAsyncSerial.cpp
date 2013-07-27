@@ -25,7 +25,7 @@
 #include "TestHelpers.h"
 #include "BufferHelpers.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <boost/test/unit_test.hpp>
 #include <boost/bind.hpp>
 

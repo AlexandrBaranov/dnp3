@@ -33,7 +33,7 @@
 #include <opendnp3/IChannel.h>
 #include <opendnp3/IOutstation.h>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <boost/random/variate_generator.hpp>
 #include <boost/random/uniform_int.hpp>
 

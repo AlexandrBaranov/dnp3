@@ -22,7 +22,7 @@
 
 #include "TransportScalabilityTestObject.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <boost/test/unit_test.hpp>
 
 #include "TestHelpers.h"

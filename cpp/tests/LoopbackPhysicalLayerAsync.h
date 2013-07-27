@@ -43,7 +43,7 @@ namespace opendnp3
 class LoopbackPhysicalLayerAsync : public PhysicalLayerAsyncASIO
 {
 public:
-	LoopbackPhysicalLayerAsync(Logger*, boost::asio::io_service* apSrv);
+	LoopbackPhysicalLayerAsync(Logger*, asio::io_service* apSrv);
 
 
 private:

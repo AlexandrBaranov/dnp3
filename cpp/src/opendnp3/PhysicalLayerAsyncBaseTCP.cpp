@@ -25,8 +25,8 @@
 #include <string>
 #include <functional>
 
-#include <boost/asio.hpp>
-#include <boost/asio/ip/tcp.hpp>
+#include <asio.hpp>
+#include <asio/ip/tcp.hpp>
 
 #include <opendnp3/Exception.h>
 #include <opendnp3/Logger.h>
@@ -35,14 +35,14 @@
 #include "LoggableMacros.h"
 
 using namespace boost;
-using namespace boost::asio;
+using namespace asio;
 using namespace boost::system;
 using namespace std;
 
 namespace opendnp3
 {
 
-PhysicalLayerAsyncBaseTCP::PhysicalLayerAsyncBaseTCP(Logger* apLogger, boost::asio::io_service* apIOService) :
+PhysicalLayerAsyncBaseTCP::PhysicalLayerAsyncBaseTCP(Logger* apLogger, asio::io_service* apIOService) :
 	PhysicalLayerAsyncASIO(apLogger, apIOService),
 	mSocket(*apIOService)
 {

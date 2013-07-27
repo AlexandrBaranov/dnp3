@@ -29,7 +29,7 @@
 #ifndef __PHYSICAL_LAYER_ASYNC_BASE_H_
 #define __PHYSICAL_LAYER_ASYNC_BASE_H_
 
-#include <boost/system/error_code.hpp>
+//#include <boost/system/error_code.hpp>
 
 #include "IPhysicalLayerAsync.h"
 #include "Loggable.h"

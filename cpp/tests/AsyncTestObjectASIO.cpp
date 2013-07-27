@@ -21,7 +21,7 @@
 //
 
 #include "AsyncTestObjectASIO.h"
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 #include <opendnp3/Location.h>
 #include <opendnp3/Exception.h>
@@ -32,11 +32,11 @@ namespace opendnp3
 {
 
 AsyncTestObjectASIO::AsyncTestObjectASIO() :
-	mpTestObjectService(new boost::asio::io_service()),
+	mpTestObjectService(new asio::io_service()),
 	mOwner(true)
 {}
 
-AsyncTestObjectASIO::AsyncTestObjectASIO(boost::asio::io_service* apService) :
+AsyncTestObjectASIO::AsyncTestObjectASIO(asio::io_service* apService) :
 	mpTestObjectService(apService),
 	mOwner(false)
 {
@@ -53,7 +53,7 @@ void AsyncTestObjectASIO::Next()
 	Next(this->GetService(), 10);
 }
 
-void AsyncTestObjectASIO::Next(boost::asio::io_service* apSrv, millis_t aSleep)
+void AsyncTestObjectASIO::Next(asio::io_service* apSrv, millis_t aSleep)
 {
 	boost::system::error_code ec;
 	size_t num = apSrv->poll_one(ec);

@@ -22,7 +22,7 @@
 
 #include "TransportLoopbackTestObject.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <boost/test/unit_test.hpp>
 #include <functional>
 
@@ -66,7 +66,7 @@ BOOST_AUTO_TEST_CASE(TestTransportWithMockLoopback)
 	LinkConfig cfgB(false, true);
 
 	EventLog log;
-	boost::asio::io_service service;
+	asio::io_service service;
 	LoopbackPhysicalLayerAsync phys(log.GetLogger(LEV_WARNING, "loopback"), &service);
 	TransportLoopbackTestObject t(&service, &phys, cfgA, cfgB);
 
@@ -91,7 +91,7 @@ BOOST_AUTO_TEST_CASE(TestTransportWithSerialLoopback)
 	s.mFlowType = FLOW_NONE;
 
 	EventLog log;
-	boost::asio::io_service service;
+	asio::io_service service;
 	PhysicalLayerAsyncSerial phys(log.GetLogger(LEV_WARNING, "serial"), &service, s);
 	TransportLoopbackTestObject t(&service, &phys, cfgA, cfgB);
 

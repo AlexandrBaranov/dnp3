@@ -22,7 +22,7 @@
 
 #include "PhysicalLayerAsyncTCPServer.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 #include <functional>
 #include <string>
@@ -35,18 +35,18 @@
 
 using namespace boost;
 using namespace boost::system;
-using namespace boost::asio;
+using namespace asio;
 using namespace std;
 
 namespace opendnp3
 {
 
-PhysicalLayerAsyncTCPServer::PhysicalLayerAsyncTCPServer(Logger* apLogger, boost::asio::io_service* apIOService, const std::string& arEndpoint, uint16_t aPort) :
+PhysicalLayerAsyncTCPServer::PhysicalLayerAsyncTCPServer(Logger* apLogger, asio::io_service* apIOService, const std::string& arEndpoint, uint16_t aPort) :
 	PhysicalLayerAsyncBaseTCP(apLogger, apIOService),
 	mLocalEndpoint(ip::tcp::v4(), aPort),
 	mAcceptor(*apIOService)
 {
-	mLocalEndpoint.address( boost::asio::ip::address::from_string(arEndpoint) );
+	mLocalEndpoint.address( asio::ip::address::from_string(arEndpoint) );
 }
 
 /* Implement the actions */

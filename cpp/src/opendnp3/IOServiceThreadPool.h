@@ -27,7 +27,7 @@
 
 #include <opendnp3/Visibility.h>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 #include <thread>
 #include <functional>
@@ -50,7 +50,7 @@ public:
 
 	~IOServiceThreadPool();
 
-	boost::asio::io_service* GetIOService();
+	asio::io_service* GetIOService();
 
 	void Shutdown();
 
@@ -65,8 +65,8 @@ private:
 
 	void Run();
 
-	boost::asio::io_service mService;
-	boost::asio::monotonic_timer mInfiniteTimer;
+	asio::io_service mService;
+	asio::monotonic_timer mInfiniteTimer;
 	std::vector<std::thread*> mThreads;
 };
 

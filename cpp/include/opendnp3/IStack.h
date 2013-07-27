@@ -36,13 +36,11 @@
 #include "DestructorHook.h"
 #include "StackState.h"
 
-namespace boost
-{
 namespace asio
 {
 class io_service;
 }
-}
+
 
 namespace opendnp3
 {
@@ -60,7 +58,7 @@ class VtoEndpointImpl;
 class IStack : public DestructorHook
 {
 public:
-	IStack(Logger* apLogger, boost::asio::io_service* apService);
+	IStack(Logger* apLogger, asio::io_service* apService);
 	virtual ~IStack();
 
 	/**
@@ -123,7 +121,7 @@ private:
 	IVtoEndpoint* CreateVtoEndpoint(IPhysicalLayerAsync* apPhys, const VtoRouterSettings& arSettings);
 
 	Logger* mpLogger;
-	boost::asio::io_service* mpService;
+	asio::io_service* mpService;
 	std::set<IVtoEndpoint*> mVtoEndpoints;
 };
 

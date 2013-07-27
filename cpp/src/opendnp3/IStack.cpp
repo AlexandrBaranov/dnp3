@@ -33,7 +33,7 @@
 namespace opendnp3
 {
 
-IStack::IStack(Logger* apLogger, boost::asio::io_service* apService) :
+IStack::IStack(Logger* apLogger, asio::io_service* apService) :
 	mpLogger(apLogger),
 	mpService(apService)
 {

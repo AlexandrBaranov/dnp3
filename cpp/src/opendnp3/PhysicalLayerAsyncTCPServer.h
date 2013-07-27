@@ -33,7 +33,7 @@
 
 #include <opendnp3/Location.h>
 
-#include <boost/asio/ip/tcp.hpp>
+#include <asio/ip/tcp.hpp>
 
 namespace opendnp3
 {
@@ -41,7 +41,7 @@ namespace opendnp3
 class DLL_LOCAL PhysicalLayerAsyncTCPServer : public PhysicalLayerAsyncBaseTCP
 {
 public:
-	PhysicalLayerAsyncTCPServer(Logger*, boost::asio::io_service* apIOService, const std::string& arEndpoint, uint16_t aPort);
+	PhysicalLayerAsyncTCPServer(Logger*, asio::io_service* apIOService, const std::string& arEndpoint, uint16_t aPort);
 
 	/* Implement the remainging actions */
 	void DoOpen();
@@ -53,10 +53,10 @@ private:
 
 	void CloseAcceptor();
 
-	boost::asio::ip::tcp::endpoint mLocalEndpoint;
-	boost::asio::ip::tcp::endpoint mRemoteEndpoint;
+	asio::ip::tcp::endpoint mLocalEndpoint;
+	asio::ip::tcp::endpoint mRemoteEndpoint;
 
-	boost::asio::ip::tcp::acceptor mAcceptor;
+	asio::ip::tcp::acceptor mAcceptor;
 };
 }
 

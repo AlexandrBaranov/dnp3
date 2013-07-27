@@ -29,7 +29,7 @@
 #ifndef __TIMER_ASIO_H_
 #define __TIMER_ASIO_H_
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 #include <opendnp3/Visibility.h>
 
@@ -58,7 +58,7 @@ class DLL_LOCAL TimerASIO : public ITimer
 	friend class ASIOExecutor;
 
 public:
-	TimerASIO(boost::asio::strand* apStrand);
+	TimerASIO(asio::strand* apStrand);
 
 	// Implement ITimer
 	void Cancel();
@@ -72,7 +72,7 @@ private:
 
 	bool mCanceled;
 
-	boost::asio::monotonic_timer mTimer;
+	asio::monotonic_timer mTimer;
 };
 
 }

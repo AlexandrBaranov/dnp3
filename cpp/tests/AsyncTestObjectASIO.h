@@ -40,17 +40,17 @@ class AsyncTestObjectASIO : public AsyncTestObject
 {
 public:
 	AsyncTestObjectASIO();
-	AsyncTestObjectASIO(boost::asio::io_service*);
+	AsyncTestObjectASIO(asio::io_service*);
 	virtual ~AsyncTestObjectASIO();
 
-	boost::asio::io_service* GetService() {
+	asio::io_service* GetService() {
 		return mpTestObjectService;
 	}
 
-	static void Next(boost::asio::io_service* apSrv, millis_t aSleep);
+	static void Next(asio::io_service* apSrv, millis_t aSleep);
 
 private:
-	boost::asio::io_service* mpTestObjectService;
+	asio::io_service* mpTestObjectService;
 	bool mOwner;
 	void Next();
 

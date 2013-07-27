@@ -21,7 +21,7 @@
 //
 
 #include "AsyncSerialTestObject.h"
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 namespace opendnp3
 {

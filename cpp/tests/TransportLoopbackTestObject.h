@@ -39,7 +39,7 @@ class TransportLoopbackTestObject : public LogTester, public AsyncTestObjectASIO
 {
 public:
 	TransportLoopbackTestObject(
-	        boost::asio::io_service*,
+	        asio::io_service*,
 	        IPhysicalLayerAsync*,
 	        LinkConfig,
 	        LinkConfig,

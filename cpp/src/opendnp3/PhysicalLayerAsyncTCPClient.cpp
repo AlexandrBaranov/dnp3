@@ -22,7 +22,7 @@
 
 #include "PhysicalLayerAsyncTCPClient.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <functional>
 #include <string>
 
@@ -34,17 +34,17 @@
 #include "LoggableMacros.h"
 
 using namespace boost;
-using namespace boost::asio;
+using namespace asio;
 using namespace std;
 
 namespace opendnp3
 {
 
-PhysicalLayerAsyncTCPClient::PhysicalLayerAsyncTCPClient(Logger* apLogger, boost::asio::io_service* apIOService, const std::string& arAddress, uint16_t aPort) :
+PhysicalLayerAsyncTCPClient::PhysicalLayerAsyncTCPClient(Logger* apLogger, asio::io_service* apIOService, const std::string& arAddress, uint16_t aPort) :
 	PhysicalLayerAsyncBaseTCP(apLogger, apIOService),
 	mRemoteEndpoint(ip::tcp::v4(), aPort)
 {
-	mRemoteEndpoint.address( boost::asio::ip::address::from_string(arAddress) );
+	mRemoteEndpoint.address( asio::ip::address::from_string(arAddress) );
 }
 
 /* Implement the actions */

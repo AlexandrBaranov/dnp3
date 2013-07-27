@@ -22,7 +22,7 @@
 
 #include "TransportStackPair.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 #include <opendnp3/Logger.h>
 
@@ -33,7 +33,7 @@ TransportStackPair::TransportStackPair(
         LinkConfig aClientCfg,
         LinkConfig aServerCfg,
         Logger* apLogger,
-        boost::asio::io_service* apService,
+        asio::io_service* apService,
         boost::uint16_t aPort) :
 
 	mClient(apLogger->GetSubLogger("TCPClient"), apService, "127.0.0.1", aPort),

@@ -30,8 +30,6 @@
 #include "Objects.h"
 #include "SlaveResponseTypes.h"
 
-using namespace boost;
-
 namespace opendnp3
 {
 

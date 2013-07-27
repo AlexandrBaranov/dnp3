@@ -27,7 +27,7 @@
 namespace opendnp3
 {
 
-WrappedTcpPipe::WrappedTcpPipe(Logger* apLogger, boost::asio::io_service* apService, uint16_t aPort) :
+WrappedTcpPipe::WrappedTcpPipe(Logger* apLogger, asio::io_service* apService, uint16_t aPort) :
 	clientTcp(apLogger->GetSubLogger("clientTcp"), apService, "127.0.0.1", aPort),
 	serverTcp(apLogger->GetSubLogger("serverTcp"), apService, "127.0.0.1", aPort),
 	client(apLogger->GetSubLogger("clientWrapper"), &clientTcp),

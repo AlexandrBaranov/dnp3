@@ -29,7 +29,7 @@
 #include <opendnp3/LogToStdio.h>
 #include <opendnp3/Exception.h>
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 #include "IntegrationTest.h"
 

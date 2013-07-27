@@ -31,10 +31,10 @@
 
 /*
 #ifndef OPENDNP3_BOOST_TIMER_PATCH
-#include <boost/asio/steady_timer.hpp>
+#include <asio/steady_timer.hpp>
 namespace boost {
 namespace asio {
-	typedef boost::asio::steady_timer monotonic_timer;
+	typedef asio::steady_timer monotonic_timer;
 }}
 #else
 */

@@ -51,7 +51,7 @@ namespace opendnp3
 class DLL_LOCAL PhysicalLayerAsyncASIO : public PhysicalLayerAsyncBase
 {
 public:
-	PhysicalLayerAsyncASIO(Logger* apLogger, boost::asio::io_service* apService) :
+	PhysicalLayerAsyncASIO(Logger* apLogger, asio::io_service* apService) :
 		PhysicalLayerAsyncBase(apLogger),
 		mStrand(*apService),
 		mExecutor(&mStrand)
@@ -64,7 +64,7 @@ public:
 	}
 
 protected:
-	boost::asio::strand mStrand;
+	asio::strand mStrand;
 	ASIOExecutor mExecutor;
 };
 

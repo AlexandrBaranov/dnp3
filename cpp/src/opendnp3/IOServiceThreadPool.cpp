@@ -81,7 +81,7 @@ for(auto pThread: mThreads) pThread->join();
 	}
 }
 
-boost::asio::io_service* IOServiceThreadPool::GetIOService()
+asio::io_service* IOServiceThreadPool::GetIOService()
 {
 	return &mService;
 }

@@ -31,7 +31,7 @@
 
 #include "PhysicalLayerAsyncBaseTCP.h"
 
-#include <boost/asio/ip/tcp.hpp>
+#include <asio/ip/tcp.hpp>
 
 #include <opendnp3/Location.h>
 
@@ -41,7 +41,7 @@ namespace opendnp3
 class DLL_LOCAL PhysicalLayerAsyncTCPClient : public PhysicalLayerAsyncBaseTCP
 {
 public:
-	PhysicalLayerAsyncTCPClient(Logger* apLogger, boost::asio::io_service* apIOService, const std::string& arAddress, uint16_t aPort);
+	PhysicalLayerAsyncTCPClient(Logger* apLogger, asio::io_service* apIOService, const std::string& arAddress, uint16_t aPort);
 
 	/* Implement the remaining actions */
 	void DoOpen();
@@ -49,7 +49,7 @@ public:
 	void DoOpenSuccess();
 
 private:
-	boost::asio::ip::tcp::endpoint mRemoteEndpoint;
+	asio::ip::tcp::endpoint mRemoteEndpoint;
 
 };
 

@@ -22,7 +22,7 @@
 
 #include "LoopbackPhysicalLayerAsync.h"
 
-#include <boost/asio.hpp>
+#include <asio.hpp>
 #include <boost/bind.hpp>
 
 #include <opendnp3/Logger.h>
@@ -34,7 +34,7 @@ using namespace boost::system;
 namespace opendnp3
 {
 
-LoopbackPhysicalLayerAsync::LoopbackPhysicalLayerAsync(Logger* apLogger, boost::asio::io_service* apSrv) :
+LoopbackPhysicalLayerAsync::LoopbackPhysicalLayerAsync(Logger* apLogger, asio::io_service* apSrv) :
 	PhysicalLayerAsyncASIO(apLogger, apSrv),
 	mReadSize(0),
 	mpReadBuff(NULL)
