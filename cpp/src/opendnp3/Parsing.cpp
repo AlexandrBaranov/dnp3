@@ -26,8 +26,7 @@
 
 namespace opendnp3
 {
-
-	/*
+	
 bool Parsing::Get(const std::string& aArg, bool& arValue)
 {
 	if(aArg == "true") {
@@ -47,17 +46,11 @@ bool Parsing::Get(const std::string& aArg, uint8_t& arValue)
 {
 	int value;
 	if(Parsing::Get(aArg, value)) {
-		try {
-			arValue = boost::numeric::converter<uint8_t, int>::convert(value);
-		}
-		catch(...) {
-			return false;
-		}
-		return true;
+		if(value > std::numeric_limits<uint8_t>::max() || value < std::numeric_limits<uint8_t>::min()) return false;
+		else return static_cast<uint8_t>(value);
 	}
 	else return false;
 }
-*/
 
 }
 

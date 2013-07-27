@@ -33,7 +33,6 @@
 #include <assert.h>
 #include <sstream>
 #include <limits>
-#include <boost/numeric/conversion/converter.hpp>
 
 
 

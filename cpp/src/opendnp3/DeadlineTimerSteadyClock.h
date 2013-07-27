@@ -30,7 +30,7 @@
 #define __DEADLINE_TIMER_STEADY_CLOCK_H_
 
 #include <opendnp3/Clock.h>
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 namespace boost {
 namespace asio {
@@ -92,11 +92,13 @@ struct time_traits<opendnp3::timer_clock>
 	Convert to posix_time::time_duration type, since this is what ASIO needs under the hood.  Since we're already 
 	representing durations in posix_time::time_duration, this is a mere pass-through.
 	*/	
+/*
 	static boost::posix_time::time_duration to_posix_duration(const duration_type& duration)
 	{
 		auto us = std::chrono::duration_cast<std::chrono::microseconds>(duration);
 		return boost::posix_time::microseconds(us.count());
 	}	
+*/
 };
 
 /**
@@ -104,7 +106,7 @@ Convenience typedef for pairing the steady_clock time_traits (above) with a basi
 a ready-to-use deadline timer that is based on a monotonic time that is immune to system clock changes.
 A Boosty name has been chosen, as it is expected that in the near future boost::asio will have this built in.
 */
-typedef boost::asio::basic_deadline_timer<opendnp3::timer_clock> monotonic_timer; 
+typedef asio::basic_waitable_timer<opendnp3::timer_clock> monotonic_timer; 
 
 }}
 

@@ -72,7 +72,7 @@ private:
 
 	bool mCanceled;
 
-	asio::monotonic_timer mTimer;
+	asio::basic_waitable_timer<opendnp3::timer_clock> mTimer;
 };
 
 }

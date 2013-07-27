@@ -70,7 +70,7 @@ private:
 	std::condition_variable mCondition;
 	bool mIsShuttingDown;
 
-	void OnTimerCallback(const boost::system::error_code&, TimerASIO*, std::function<void ()>);
+	void OnTimerCallback(const std::error_code&, TimerASIO*, std::function<void ()>);
 };
 }
 
